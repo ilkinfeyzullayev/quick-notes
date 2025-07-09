@@ -6,14 +6,33 @@
     <title>Document</title>
     <script defer src="app.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header id="header">
       <h1 id="logo">Quick Notes</h1>
-      <button id="add-note">+ Add Note</button>
-      <button id="mode-changer">🌙</button>
+      <div id="buttons">
+        <button id="add-note">+ Add Note</button>
+        <button id="mode-changer">🌙</button>
+      </div>
     </header>
     <main id="notes-grid"></main>
-    <dialog id="dialog">Hello</dialog>
+    <h1 id="no-note">You have no notes... <br />Yet...</h1>
+    <dialog id="dialog">
+      <form action="app.js" method="get">
+        <label for="title-input"><h4>Title</h4></label>
+        <input id="title-input" type="text" maxlength="50" />
+
+        <label for="note-input"><h4>Note</h4></label>
+        <textarea id="note-input"></textarea>
+      </form>
+      <button id="submit-note">Create Note</button>
+      <button id="cancel-dialog">Cancel</button>
+    </dialog>
   </body>
 </html>
