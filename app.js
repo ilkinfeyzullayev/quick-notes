@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="note-content">
           ${noteContent}
         </p>
+        <img class="delete-note" src="images/trash.svg" alt="" />
       </div>`;
     document.getElementById("title-input").value = "";
     document.getElementById("note-input").value = "";
@@ -43,6 +44,20 @@ document.addEventListener("DOMContentLoaded", function () {
       modeChanger.innerHTML = "☀️";
     } else {
       modeChanger.innerHTML = "🌙";
+    }
+  });
+
+  // Event delegation for deleting notes
+  main.addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete-note")) {
+      const noteDiv = event.target.closest(".note");
+      if (noteDiv) {
+        noteDiv.remove();
+        if (document.getElementById("no-note").innerHTML === "") {
+          document.getElementById("no-note").innerHTML =
+            "You have no notes... <br />Yet...";
+        }
+      }
     }
   });
 });

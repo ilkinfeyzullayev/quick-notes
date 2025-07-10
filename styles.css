@@ -52,6 +52,7 @@ body {
   height: 400px;
   background-color: white;
   border-radius: 10px;
+  position: relative;
 }
 
 .note-header {
@@ -155,10 +156,19 @@ body.dark-mode #dialog {
   font-size: 50px;
 }
 
-button {
+button,
+img {
   cursor: pointer;
 }
 
 button:hover {
   filter: brightness(0.95);
+}
+
+.delete-note {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 365px;
+  left: 315px;
 }
