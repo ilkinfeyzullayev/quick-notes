@@ -1,7 +1,14 @@
 const main = document.getElementById("notes-grid");
 const dialog = document.getElementById("dialog");
 
+function renderNotes() {
+  const notes = loadNotes();
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  const notes = [];
+  renderNotes();
+
   const addNote = document.getElementById("add-note");
   addNote.addEventListener("click", function () {
     const isOpen = dialog.getAttribute("open");
@@ -41,8 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const modeChanger = document.getElementById("mode-changer");
   modeChanger.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
-    if (modeChanger.innerHTML === "🌙") {
+    const isDark = document.body.classList.toggle("dark-mode");
+
+    if (isDark) {
       modeChanger.innerHTML = "☀️";
     } else {
       modeChanger.innerHTML = "🌙";

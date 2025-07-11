@@ -24,7 +24,7 @@ body {
   gap: 15px;
 }
 
-#add-note {
+.add-note-btn {
   background-color: #767ff5;
   color: white;
   border-radius: 7px;
@@ -33,7 +33,7 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-#mode-changer {
+.theme-toggle-btn {
   background-color: white;
   border-radius: 7px;
   border: none;
