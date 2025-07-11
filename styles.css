@@ -172,3 +172,14 @@ button:hover {
   top: 365px;
   left: 315px;
 }
+
+.dark-trash {
+  filter: invert(100%);
+}
+
+.dark-note,
+.dark-title {
+  background-color: #23272f;
+  color: white;
+  caret-color: white;
+}

@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>`;
     document.getElementById("title-input").value = "";
     document.getElementById("note-input").value = "";
-    document.getElementById("no-note").innerHTML = "";
+    if (main.querySelectorAll(".note").length > 0) {
+      document.getElementById("no-note").innerHTML = "";
+    }
   });
 
   const modeChanger = document.getElementById("mode-changer");
@@ -45,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       modeChanger.innerHTML = "🌙";
     }
+    document.querySelector(".delete-note").classList.toggle("dark-trash");
+    document.querySelector("#note-input").classList.toggle("dark-note");
+    document.querySelector("#title-input").classList.toggle("dark-title");
   });
 
   // Event delegation for deleting notes
@@ -53,9 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const noteDiv = event.target.closest(".note");
       if (noteDiv) {
         noteDiv.remove();
-        if (document.getElementById("no-note").innerHTML === "") {
+        if (main.querySelectorAll(".note").length === 0) {
           document.getElementById("no-note").innerHTML =
             "You have no notes... <br />Yet...";
+        } else {
+          document.getElementById("no-note").innerHTML = "";
         }
       }
     }
